@@ -156,7 +156,9 @@
 
                     <div class="row gallery-item">
                         <?php
-                        function count_files($dir)
+                       
+                       /*
+                       function count_files($dir)
 						 {
 						 		$num = 0;
 						 		$dir_handle = opendir($dir);
@@ -176,6 +178,16 @@
 							</div>
 							<?php
 						}
+						*/
+						foreach(glob('img/works/photos/*.*thumb.jpg') as $filename){
+							?>
+					     	<div class="col-md-3 offset-top">
+								<a href=<?php echo '"' . substr_replace($filename ,"",-9) . '"'?> data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+									<img src=<?php echo '"' . $filename .'"' ?> class="img-responsive" alt="img">
+								</a>
+							</div>
+					     	<?php
+					 	}
                         ?>
 					</div>
                 </div>

@@ -30,11 +30,11 @@ if (!empty($_FILES)) {
       
     $targetPath = dirname( __FILE__ ) . $ds. $storeFolder . $ds;
      
-    $targetFile =  $targetPath. $_FILES['file']['name'];
+    $targetFile =  $targetPath. $_FILES['file']['name']. ".jpg";
  
     move_uploaded_file($tempFile,$targetFile);
 	
-	make_thumb($targetFile, $targetFile . ".jpg", 263);
+	make_thumb($targetFile, $targetFile . "thumb.jpg", 263);
      
 }
 
